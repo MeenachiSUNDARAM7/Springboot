@@ -3,11 +3,17 @@ package com.example.demo7.student;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
 @Entity
 @Table
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Student {
     @Id
     private Integer id;
@@ -15,25 +21,6 @@ public class Student {
     private String email;
     private LocalDate dob;
     private Integer age;
-
-    public Student() {
-
-    }
-
-    public Student(Integer id, String name, String email, LocalDate dob, Integer age) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.dob = dob;
-        this.age = age;
-    }
-
-    public Student(String name, String email, LocalDate dob, Integer age) {
-        this.name = name;
-        this.email = email;
-        this.dob = dob;
-        this.age = age;
-    }
 
     public Integer getId() {
         return id;
@@ -75,14 +62,4 @@ public class Student {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", dob=" + dob +
-                ", age=" + age +
-                '}';
-    }
 }
