@@ -1,11 +1,11 @@
 package com.example.demo7.student;
-import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.*;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping(path = "api/v1/student")
 public class StudentController {
 
@@ -20,6 +20,5 @@ public class StudentController {
     public void registerNewStudents(@RequestBody Student student){
         studentService.addNewStudent(student);
     }
-
 
 }
