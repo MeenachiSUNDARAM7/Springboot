@@ -6,19 +6,20 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(path = "api/v1/student")
+@RequestMapping(path = "api/v1/students")
 public class StudentController {
 
     private final StudentService studentService;
 
     @GetMapping
-    public List<Student> getStudents() {
+    public List<StudentModel> getStudents() {
         return studentService.getStudents();
     }
 
     @PostMapping
-    public void registerNewStudents(@RequestBody Student student){
+    public void registerNewStudents(@RequestBody StudentEntity student){
         studentService.addNewStudent(student);
     }
+
 
 }
